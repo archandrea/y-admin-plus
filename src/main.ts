@@ -1,9 +1,17 @@
 import { createApp } from 'vue'
-import store from './store'
+import pinia from './store'
+import router from './router'
+import Antd from './plugins/ant-design-vue'
 import App from './App.vue'
 
 const app = createApp(App)
 
-app.use(store)
-app.mount('#app');
+app
+  .use(pinia)
+  .use(router)
+  .use(Antd)
+  .mount('#app')
 
+app.config.errorHandler = (err) => {
+  console.log(err)
+}
