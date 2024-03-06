@@ -3,7 +3,7 @@
     "baseUrl": "./",
     "typeRoots": [
       "node_modules/@types", // 默认值
-      "src/types"
+      "types"
     ],
     "paths": {
       "@/*": [

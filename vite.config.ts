@@ -10,6 +10,7 @@ const pathResolve = (dir) => {
 
 const alias = {
   '@': pathResolve("src"),
+  '#': pathResolve("types"),
 }
 
 // https://vitejs.dev/config/
