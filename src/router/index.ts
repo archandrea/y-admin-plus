@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
-import asyncRoutes from './asyncRoutes.ts'
+import { usePermission } from '@/store/modules/permission'
 
 const constantRoutes: RouteRecordRaw[] = [
   {
@@ -11,7 +11,17 @@ const constantRoutes: RouteRecordRaw[] = [
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: constantRoutes.concat(asyncRoutes),
+  routes: constantRoutes,
+})
+
+setTimeout(() => {
+  const permissionStore = usePermission()
+  permissionStore.generateRoutes()
+}, 0)
+
+router.beforeEach((to, from) => {
+  console.log('to', to)
+  console.log('from', from)
 })
 
 export default router

@@ -3,6 +3,7 @@ import pinia from './store'
 import router from './router'
 import Antd from './plugins/ant-design-vue'
 import App from './App.vue'
+import '@/assets/style/index.scss'
 
 const app = createApp(App)
 

@@ -8,7 +8,3 @@ declare module 'ant-design-vue' {
   import Antd from 'ant-design-vue'
   export default Antd
 }
-
-declare module '*.png'
-declare module '*.jpg'
-declare module '*.jpeg'
